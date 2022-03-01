@@ -1,0 +1,1016 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "39df6df2",
+   "metadata": {},
+   "source": [
+    "# Numpy is the core  library for scitific computing in python\n",
+    "It provides a high perfrormance Multidimentional array object and tools for  working with array\n",
+    "It uses  relatively less memory to store data\n",
+    "In numpy Dimensons are called axes\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "4cf09057",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "8990c71a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2 4 6]\n",
+      "<class 'numpy.ndarray'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([2,4,6])\n",
+    "print(a)\n",
+    "print(type(a))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "2396ed2c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[0]\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "2791410b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[2]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "cf64a9ea",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[4 5 6]\n",
+      " [7 8 9]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 2D array\n",
+    "b= np.array([[4,5,6],[7,8,9]])\n",
+    "print (b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "ce333f6d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "1\n",
+      "2\n",
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([10])\n",
+    "b=np.array([11,22,33,44])\n",
+    "c=np.array([[4,5,6],[7,8,9]])\n",
+    "d=np.array([[[1,2,3],[4,5,6]],[[1,2,3],[4,5,6]]]) \n",
+    "print(a.ndim)\n",
+    "print(b.ndim)\n",
+    "print(c.ndim)\n",
+    "print(d.ndim)    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "b8eab7c6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Numpy array indexing\n",
+    "x= np.array([2,3,4,5])\n",
+    "print (x[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "373bd5c9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=np.array([2,3,4,5])\n",
+    "print(x[2]+x[3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "06dd5b86",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5th element on 2nd row: 11\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2d\n",
+    "y=np.array([[1,2,3,4,5],[7,8,9,10,11]])\n",
+    "print('5th element on 2nd row:',y[1,4])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "e856ff43",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6\n"
+     ]
+    }
+   ],
+   "source": [
+    "#3d\n",
+    "z=np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])\n",
+    "print(z[0,1,2])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "4941fe1b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "last element from 2nd dim: 19\n"
+     ]
+    }
+   ],
+   "source": [
+    "#negative indexing\n",
+    "y=np.array([[10,11,12,13,14],[15,16,17,18,19]])\n",
+    "print('last element from 2nd dim:',y[1,-1])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "722d9dd4",
+   "metadata": {},
+   "source": [
+    "# slicing  array\n",
+    "taking element  from one given index to another"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "09c81a8e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[13 14 15 16]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([11,12,13,14,15,16,17])\n",
+    "print(a[2:6])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "b94ceba1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[13 14 15 16]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([11,12,13,14,15,16,17])\n",
+    "print(a[-5:-1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "id": "5107483b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[11 14]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([11,12,13,14,15])\n",
+    "print(a[::3])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "id": "b6bd1126",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[22 23 24]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#from the second ele  from index 1 to index 4 not include\n",
+    "a=np.array([[11,12,13,14,15,16],[21,22,23,24,25,26]])\n",
+    "print(a[1,1:4])\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fe473e0e",
+   "metadata": {},
+   "source": [
+    "# Data type in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "id": "94cfc1de",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "int32\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([2,3,4,5])\n",
+    "print(a.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "85ded81c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<U6\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array(['kitkat','munch','bubli'])\n",
+    "print(a.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "id": "23e93916",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[b'10' b'20' b'30' b'40']\n",
+      "|S2\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([10,20,30,40],dtype='S')\n",
+    "print(a)\n",
+    "print(a.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "id": "550ff5a5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2 4 5 6]\n",
+      "int32\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([2,4,5,6],dtype='i4')\n",
+    "print(a)\n",
+    "print(a.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a305a47f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#astype() it uesed to create copy of aaray and allow to use dtype as parameter\n",
+    "#i-integer,b-boolean ,u-unsigned inteder,f-float,c-complex float,m-timedate,M-datetime,O-object,S-string,\n",
+    "#U-unicode string,V-fixed chunk of memory for other datatype"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "id": "42bba8e6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2 2 3]\n",
+      "int32\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=np.array([2.1,2.3,3.1])\n",
+    "newx=x.astype(int)\n",
+    "print(newx)\n",
+    "print(newx.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "afc61879",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import time\n",
+    "import sys"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "75865ce3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "28000\n"
+     ]
+    }
+   ],
+   "source": [
+    "b=range(1000)\n",
+    "print(sys.getsizeof(5)*len(b))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "b9f8ce25",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4000\n"
+     ]
+    }
+   ],
+   "source": [
+    "c=np.arange(1000)\n",
+    "print(c.size*c.itemsize)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 75,
+   "id": "961e6482",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[42  3  4  5]\n",
+      "[2 3 4 5]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#copy and view\n",
+    "arr=np.array([2,3,4,5])\n",
+    "x=arr.copy()\n",
+    "arr[0]=42\n",
+    "print(arr)\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "id": "aa6e08e6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[42  3  4  5]\n",
+      "[42  3  4  5]\n"
+     ]
+    }
+   ],
+   "source": [
+    "arr=np.array([2,3,4,5])\n",
+    "x=arr.view()\n",
+    "arr[0]=42\n",
+    "print(arr)\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "8bd3a196",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(2, 4)\n"
+     ]
+    }
+   ],
+   "source": [
+    "#shape attribute it returnsa tuple with each index having the number with corresponding value\n",
+    "a=np.array([[4,5,6,7],[9,10,11,12]])\n",
+    "print(a.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "4fc444c1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[[[ 2  5  8 10]]]]]\n",
+      "shape of array: (1, 1, 1, 1, 4)\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([2,5,8,10],ndmin=5)\n",
+    "print(a)\n",
+    "print('shape of array:',a.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "57c8e890",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[ 1  2]\n",
+      "  [ 3  4]\n",
+      "  [ 5  6]]\n",
+      "\n",
+      " [[ 7  8]\n",
+      "  [ 9 10]\n",
+      "  [11 12]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#reshape \n",
+    "a=np.array([1,2,3,4,5,6,7,8,9,10,11,12])\n",
+    "newa=a.reshape(2,3,2)\n",
+    "print(newa)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "434cc2fa",
+   "metadata": {},
+   "source": [
+    "# Iterating Array\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "7f4d53e9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n",
+      "5\n",
+      "6\n"
+     ]
+    }
+   ],
+   "source": [
+    "arr= np.array([4,5,6])\n",
+    "for x in arr:\n",
+    "    print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "a32b9eda",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[4 5 6]\n",
+      "[7 8 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=np.array([[4,5,6],[7,8,9]])\n",
+    "for x in a:\n",
+    "    print(x)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "8defd9aa",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n",
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "arr=np.array([[4,5,6],[7,8,9]])\n",
+    "for x in arr:\n",
+    "    for y in x:\n",
+    "     print (y)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "6755a8f4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3]\n",
+      "[4 5 6]\n",
+      "[7 8 9]\n",
+      "[10 11 12]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#iterate down to scalar\n",
+    "arr=np.array([[[[1,2,3],[4,5,6],[7,8,9],[10,11,12]]]])\n",
+    "for x in arr:\n",
+    "    for y in x:\n",
+    "        for z in y:\n",
+    "            print (z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "b062ec41",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "b'2'\n",
+      "b'3'\n",
+      "b'4'\n"
+     ]
+    }
+   ],
+   "source": [
+    "#nditer()and op_dtypes\n",
+    "\n",
+    "arr=np.array([2,3,4])\n",
+    "for x in np.nditer(arr, flags=['buffered'],op_dtypes=['S']):\n",
+    "        print(x)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "43820808",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(0, 0) 4\n",
+      "(0, 1) 5\n",
+      "(0, 2) 6\n",
+      "(0, 3) 7\n",
+      "(1, 0) 8\n",
+      "(1, 1) 9\n",
+      "(1, 2) 10\n",
+      "(1, 3) 11\n"
+     ]
+    }
+   ],
+   "source": [
+    "#ndenuerate\n",
+    "arr=np.array([[4,5,6,7],[8,9,10,11]])\n",
+    "for idx,x in np.ndenumerate(arr):\n",
+    "    print(idx,x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "483bfea6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[2 3 6 7]\n",
+      " [4 5 8 9]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#concatinate\n",
+    "a1=np.array([[2,3],[4,5]])\n",
+    "a2=np.array([[6,7],[8,9]])\n",
+    "arr=np.concatenate((a1,a2),axis=1)\n",
+    "print(arr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "47eb5ce2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[2 3]\n",
+      "  [6 7]]\n",
+      "\n",
+      " [[4 5]\n",
+      "  [8 9]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#joining array using stack function\n",
+    "a1=np.array([[2,3],[4,5]])\n",
+    "a2=np.array([[6,7],[8,9]])\n",
+    "arr=np.stack((a1,a2),axis=1)\n",
+    "print(arr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "fb43f86a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2 3 4 9 8 7]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#stacking along with rows and cols\n",
+    "a1=np.array([2,3,4])\n",
+    "a2=np.array([9,8,7])\n",
+    "a=np.hstack((a1,a2))\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "f1d739ce",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[2 3 4]\n",
+      " [9 8 7]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a1=np.array([2,3,4])\n",
+    "a2=np.array([9,8,7])\n",
+    "a=np.vstack((a1,a2))\n",
+    "print(a)\n",
+    "            "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "7006711d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[2 9]\n",
+      "  [3 8]\n",
+      "  [4 7]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#staking along with height\n",
+    "a1=np.array([2,3,4])\n",
+    "a2=np.array([9,8,7])\n",
+    "a=np.dstack((a1,a2))\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "4ffd383a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[array([[[2, 9],\n",
+      "        [3, 8],\n",
+      "        [4, 7]]]), array([], shape=(0, 3, 2), dtype=int32), array([], shape=(0, 3, 2), dtype=int32), array([], shape=(0, 3, 2), dtype=int32), array([], shape=(0, 3, 2), dtype=int32)]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#spliting arrays\n",
+    "x=np.array([[1,2],[3,4],[5,6],[7,8],[9,20],[11,12]])\n",
+    "newx=np.array_split(a,5)\n",
+    "print(newx)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "0bed70f4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[9 8 7 6 5 4 3 2 1]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#searching array\n",
+    "x=np.array([9,8,7,6,5,4,3,2,1])\n",
+    "y=np.where(x%2==0)\n",
+    "print(x)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "334be143",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n"
+     ]
+    }
+   ],
+   "source": [
+    "#search sorted are used to assumed on sorted array \n",
+    "x=np.array([5,7,8,9,10,6])\n",
+    "y=np.searchsorted(x,6)\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "id": "7e0a3eba",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 0 3]\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=np.array([5,7,8,9,10,6])\n",
+    "y=np.searchsorted(x,[6,5,9])\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "1d69d98a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=np.array([5,7,8,9,10,6])\n",
+    "y=np.searchsorted(x,7,side='Right')\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0d4636ff",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
